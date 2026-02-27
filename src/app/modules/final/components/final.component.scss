@@ -1,0 +1,293 @@
+@import "/src/assets/scss/colors";
+%card {
+  padding: 12px 20px;
+  background-color: $secondary;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+$card_width: 315px;
+main {
+  .qomander-logo {
+    max-width: 60px;
+    width: 100%;
+    position: relative;
+    bottom: -11px;
+    cursor: pointer;
+    margin-bottom: 35px;
+  }
+  .meal {
+    @extend %card;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: $card_width;
+    margin-inline: auto;
+    box-sizing: border-box;
+    width: 100%;
+    $this: &;
+    &__picture {
+      flex-shrink: 0;
+      img {
+        max-height: 75px;
+        height: 100%;
+        width: auto;
+        border-radius: 12px;
+        border: 1px solid #e0e0e0;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        object-fit: cover;
+      }
+    }
+    &__name {
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 1.5;
+      flex: 1 1 auto;
+      min-width: 0;
+      overflow: hidden;
+      > p {
+        margin: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .meal__price {
+        // #{$this} is not working here, idk why
+        font-size: 18px;
+        color: $primary;
+        margin-top: 4px;
+      }
+    }
+  }
+  .selected-options {
+    margin-top: 17px;
+    max-width: $card_width;
+    margin-inline: auto;
+    @extend %card;
+    &__heading {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      span {
+        color: $primary;
+        font-size: 15px;
+      }
+    }
+    &__stack {
+      display: flex;
+      width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 5px;
+      padding-right: 8px;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      &::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: #1f5f3f;
+        border-radius: 10px;
+      }
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .option {
+        text-align: center;
+        flex-shrink: 0;
+        margin-right: 23px;
+        > img {
+          max-height: 45px;
+          padding: 3px;
+          border-radius: 12px;
+          border: 1px solid #e0e0e0;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+          object-fit: cover;
+        }
+        > p {
+          font-weight: 600;
+          font-size: 11.5px;
+          margin-top: 3px;
+        }
+        &__price {
+          font-size: 10px;
+          color: $primary;
+          margin-top: 2px;
+        }
+      }
+    }
+  }
+  .special-instructions {
+    margin-top: 17px;
+    max-width: $card_width;
+    margin-inline: auto;
+    @extend %card;
+    &__heading {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    &__text {
+      font-size: 15px;
+      line-height: 1.5;
+      color: $white;
+      white-space: pre-wrap;
+    }
+  }
+  .total-price {
+    margin-top: 17px;
+    max-width: $card_width;
+    margin-inline: auto;
+    @extend %card;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__label {
+      font-size: 20px;
+      font-weight: 600;
+    }
+    &__value {
+      font-size: 24px;
+      font-weight: bold;
+      color: $primary;
+    }
+  }
+  .quantity-buttons {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex: 0 0 auto;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: 4px 6px;
+    width: auto;
+    min-width: fit-content;
+    > button {
+      cursor: pointer;
+      color: black;
+      font-weight: bold;
+      background-color: white;
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      max-width: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      padding: 0;
+      border: 0;
+      flex-shrink: 0;
+      box-sizing: border-box;
+    }
+    > span {
+      font-weight: 600;
+      min-width: 30px;
+      width: auto;
+      text-align: center;
+      flex-shrink: 0;
+      box-sizing: border-box;
+    }
+  }
+  .heading {
+    text-align: center;
+    margin-top: 30px;
+    &__picture {
+      max-width: 100px;
+      margin-inline: auto;
+    }
+    h1 {
+      color: $blue;
+      font-size: 41px;
+      font-weight: bold;
+    }
+    h2 {
+      margin-top: 38px;
+      font-size: 19px;
+      font-weight: 600;
+    }
+    &__drink {
+      background-color: $secondary;
+      max-width: 230px;
+      margin-inline: auto;
+      border: 2.5px solid $primary;
+      border-radius: 15px;
+      padding: 10px 12px;
+      display: flex;
+      justify-content: space-around;
+      margin-top: 10px;
+      position: relative;
+      cursor: pointer;
+      &__image {
+        max-height: 65px;
+      }
+      &__title {
+        font-size: 22px;
+        line-height: 1.5;
+        font-weight: 600;
+      }
+      &__price {
+        color: $primary;
+        text-align: start;
+        font-weight: 600;
+        font-size: 18px;
+      }
+      &__circle {
+        background-color: #1f1f1f;
+        width: 35px;
+        height: 35px;
+        border-color: $primary $primary #1f1f1f #1f1f1f;
+        border-width: 2.5px;
+        border-style: solid;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: rotate(45deg);
+        position: absolute;
+        right: -19px;
+        top: 22px;
+        > span {
+          color: $primary;
+          font-weight: bold;
+          font-size: 33px;
+          transform: rotate(45deg);
+        }
+      }
+    }
+  }
+  .footer {
+    margin-top: 50px;
+    text-align: center;
+    &__heading {
+      font-weight: 600;
+      font-size: 21px;
+    }
+    &__buttons {
+      display: flex;
+      margin-top: 17px;
+      justify-content: space-around;
+      > button {
+        width: 47%;
+        font-weight: 600;
+        height: 70px;
+        border-radius: 18px;
+        font-size: 20px;
+        cursor: pointer;
+        border: 0;
+        &.white {
+          background-color: $white;
+          color: $smoke;
+        }
+        &.orange {
+          background-color: $primary;
+          color: white;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+<div class="card" [class.card__selected]="cardData.selected" (click)="cardClicked()">
+  <img class="card__picture" [src]="currentImageSrc" [alt]="cardData.name" (error)="onImageError()" height="73" />
+  <p class="card__title">{{ cardData.name }}</p>
+  <p class="card__price" *ngIf="cardData.price !== undefined">${{ cardData.price.toFixed(2) }}</p>
+  <img src="./assets/images/icons/check.svg" alt="check" class="check-mark" />
+</div>

@@ -1,0 +1,80 @@
+@import "/src/assets/scss/colors";
+
+:host {
+  background-color: $secondary;
+  max-width: 150px;
+  width: 100%;
+  margin-bottom: -25px;
+  margin-left: -25px;
+  margin-top: -25px;
+}
+.main {
+  padding-inline: 5px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  .qomander {
+    padding-top: 45px;
+    margin-inline: auto;
+    margin-bottom: 165px;
+    &__logo {
+      max-width: 60px;
+      width: 100%;
+      margin: auto;
+      cursor: pointer;
+    }
+  }
+  .categories-block {
+    padding-inline: 15px;
+    padding-bottom: 108px;
+    padding-top: 10px;
+    overflow-y: auto;
+    .category {
+      background-color: $grey;
+      margin-bottom: 22px;
+      padding: 13px 10px;
+      border-radius: 17px;
+      transition: outline-color 0.3s;
+      text-align: center;
+      cursor: pointer;
+      &__picture {
+        max-width: 86%;
+        max-height: 49px;
+        border-radius: 12px;
+        border: 1px solid #e0e0e0;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        object-fit: cover;
+      }
+      &__name {
+        text-align: center;
+        font-weight: 600;
+        font-size: 13px;
+        padding-top: 5px;
+      }
+      &__selected {
+        outline: 2.5px solid $primary;
+        position: relative;
+        img.check-mark {
+          visibility: visible !important;
+        }
+      }
+      img.check-mark {
+        width: 30px;
+        position: absolute;
+        top: -11px;
+        right: -9px;
+        visibility: hidden;
+      }
+    }
+  }
+
+  .scroll-shadow {
+    margin-left: -5px;
+    width: 100%;
+    height: 108px;
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #1f1f1fed 76%);
+  }
+}

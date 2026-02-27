@@ -1,0 +1,26 @@
+<h1 class="heading">{{ steps[currentStepIndex].heading }}</h1>
+<p class="sub-heading" *ngIf="steps[currentStepIndex].canSelect && !steps[currentStepIndex].isTextInput">
+  You can select only {{ steps[currentStepIndex].canSelect }} type
+</p>
+<div class="options-container" *ngIf="!steps[currentStepIndex].isTextInput" #mealOptions>
+  <ng-container *ngFor="let option of steps[currentStepIndex].options">
+    <app-card [cardData]="option" (cardClickedEvent)="optionClicked($event)"></app-card>
+  </ng-container>
+</div>
+<div class="special-instructions-container" *ngIf="steps[currentStepIndex].isTextInput">
+  <textarea
+    class="special-instructions-input"
+    [(ngModel)]="specialInstructionsText"
+    (input)="onSpecialInstructionsChange($any($event.target).value)"
+    placeholder="Enter any special instructions or requests..."
+    rows="6"
+  ></textarea>
+</div>
+<button
+  class="next"
+  [disabled]="false"
+  (click)="nextButton()"
+>
+  Next
+</button>
+<div class="scroll-shadow" *ngIf="!steps[currentStepIndex].isTextInput"></div>

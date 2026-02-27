@@ -1,0 +1,24 @@
+<section class="main">
+  <div class="qomander">
+    <img
+      class="qomander__logo"
+      src="./assets/images/logo/qomander.svg"
+      alt="qomander"
+      [routerLink]="'/home'"
+    />
+  </div>
+  <div class="categories-block" #catContainer>
+    <ng-container *ngFor="let cat of mealCategories; index as i; last as last">
+      <div
+        class="category"
+        [class.category__selected]="cat.name === selectedMealCategory.value.name"
+        (click)="setMealCategory(i)"
+      >
+        <img [src]="cat.picture" alt="{{ cat.name }}" class="category__picture" />
+        <p class="category__name">{{ cat.name }}</p>
+        <img src="./assets/images/icons/check.svg" alt="check" class="check-mark" />
+      </div>
+    </ng-container>
+  </div>
+  <div class="scroll-shadow"></div>
+</section>

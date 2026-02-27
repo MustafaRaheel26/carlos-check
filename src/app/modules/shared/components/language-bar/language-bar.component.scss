@@ -1,0 +1,41 @@
+@import "/src/assets/scss/colors";
+@import "/src/assets/scss/vars";
+:host {
+  position: relative;
+  display: block;
+  z-index: 99;
+}
+.selected-language {
+  position: absolute;
+  top: 25px;
+  right: 28px;
+  &-picture {
+    max-width: 35px;
+    width: 100%;
+    margin-left: 13px;
+    cursor: pointer;
+    position: relative;
+  }
+}
+
+.language-list {
+  background-color: $secondary;
+  border-radius: 10px;
+  padding: 6px 4px 6px 9px;
+  position: absolute;
+  top: 19px;
+  right: 24px;
+  cursor: pointer;
+  &.closed {
+    animation: scale-out-tr 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+  &.open {
+    animation: scale-in-tr 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+  &-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0px;
+  }
+}

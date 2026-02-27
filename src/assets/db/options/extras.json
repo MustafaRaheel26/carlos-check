@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Extra Beans",
+    "picture": "https://images.unsplash.com/photo-1596797038530-2c107229654b?w=100&h=100&fit=crop",
+    "price": 1.50,
+    "selected": false
+  },
+  {
+    "name": "Extra Rice",
+    "picture": "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=100&h=100&fit=crop",
+    "price": 1.00,
+    "selected": false
+  },
+  {
+    "name": "Extra Cheese",
+    "picture": "https://images.unsplash.com/photo-1618164436269-1e57b8a8d306?w=100&h=100&fit=crop",
+    "price": 1.50,
+    "selected": false
+  },
+  {
+    "name": "Extra Guacamole",
+    "picture": "https://images.unsplash.com/photo-1618040996337-56904b7850b9?w=100&h=100&fit=crop",
+    "price": 2.00,
+    "selected": false
+  },
+  {
+    "name": "Extra Salsa",
+    "picture": "https://images.unsplash.com/photo-1626082896386-7b11a50a587d?w=100&h=100&fit=crop",
+    "price": 0.75,
+    "selected": false
+  },
+  {
+    "name": "Extra Sour Cream",
+    "picture": "https://images.unsplash.com/photo-1571875257727-256c39da42af?w=100&h=100&fit=crop",
+    "price": 1.00,
+    "selected": false
+  },
+  {
+    "name": "Extra Jalapeno",
+    "picture": "https://images.unsplash.com/photo-1604977049386-440121997357?w=100&h=100&fit=crop",
+    "price": 0.50,
+    "selected": false
+  },
+  {
+    "name": "Extra Cilantro",
+    "picture": "https://images.unsplash.com/photo-1604977049386-440121997357?w=100&h=100&fit=crop",
+    "price": 0.50,
+    "selected": false
+  }
+]

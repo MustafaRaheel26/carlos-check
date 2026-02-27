@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Tortas",
+    "picture": "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=400&h=300&fit=crop",
+    "key": "tortas"
+  },
+  {
+    "name": "Tortas Special",
+    "picture": "https://images.unsplash.com/photo-1551782450-17144efb9c50?w=400&h=300&fit=crop",
+    "key": "tortasSpecial"
+  },
+  {
+    "name": "Tacos",
+    "picture": "https://images.unsplash.com/photo-1565299585323-38174c2b3c0e?w=400&h=300&fit=crop",
+    "key": "tacos"
+  },
+  {
+    "name": "Burritos",
+    "picture": "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=400&h=300&fit=crop",
+    "key": "burritos"
+  },
+  {
+    "name": "Flautas",
+    "picture": "https://images.unsplash.com/photo-1574343635101-937afbcb2a6f?w=400&h=300&fit=crop",
+    "key": "flautas"
+  },
+  {
+    "name": "Nachos",
+    "picture": "https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?w=400&h=300&fit=crop",
+    "key": "nachos"
+  },
+  {
+    "name": "Super Fries",
+    "picture": "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=400&h=300&fit=crop",
+    "key": "superFries"
+  },
+  {
+    "name": "Main Dishes",
+    "picture": "https://images.unsplash.com/photo-1544025162-d76694265947?w=400&h=300&fit=crop",
+    "key": "mainDishes"
+  },
+  {
+    "name": "Drinks",
+    "picture": "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&h=300&fit=crop",
+    "key": "drinks"
+  },
+  {
+    "name": "Desserts",
+    "picture": "https://images.unsplash.com/photo-1571875257727-256c39da42af?w=400&h=300&fit=crop",
+    "key": "desserts"
+  }
+]

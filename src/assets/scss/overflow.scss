@@ -1,0 +1,23 @@
+/* ===== Scrollbar CSS ===== */
+@import "/src/assets/scss/colors";
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: $primary #404040;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #404040;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: $primary;
+  border-radius: 32px;
+  // border: 2px solid #404040;
+}

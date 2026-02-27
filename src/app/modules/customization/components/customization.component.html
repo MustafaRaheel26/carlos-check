@@ -1,0 +1,45 @@
+<app-language-bar></app-language-bar>
+<main>
+  <button class="back-button" (click)="backButton()">
+    <img src="./assets/images/icons/back.svg" alt="back btn" />
+    <span>Back</span>
+  </button>
+  <div class="meal">
+    <div class="meal__picture">
+      <img [src]="currentMealImageSrc" [alt]="selectedMeal.name" (error)="onMealImageError()" />
+    </div>
+    <div class="meal__name">
+      <p>{{ selectedMeal.name }}</p>
+      <p class="meal__price">${{ selectedMeal.price.toFixed(2) }}</p>
+    </div>
+    <div class="quantity-buttons">
+      <button (click)="changeSelectedMealQuantity('-')">-</button>
+      <span>{{ selectedMealQuantity }}</span>
+      <button (click)="changeSelectedMealQuantity('+')">+</button>
+    </div>
+  </div>
+  <div class="selected-options" *ngIf="removedIngredients.length">
+    <p class="heading">
+      Removed Ingredients
+    </p>
+    <div class="selected-options__stack">
+      <div class="option" *ngFor="let ingredient of removedIngredients">
+        <img [src]="ingredient.picture" [alt]="ingredient.name" (error)="onOptionImageError($event, ingredient)" />
+        <p>{{ ingredient.name }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="selected-options" *ngIf="selectedOptions.length">
+    <p class="heading">
+      Added Extras
+      <span>{{ optionsTotalPrice === 0 ? "Free" : "+ $" + optionsTotalPrice.toFixed(2) }}</span>
+    </p>
+    <div class="selected-options__stack">
+      <div class="option" *ngFor="let option of selectedOptions">
+        <img [src]="option.picture" [alt]="option.name" (error)="onOptionImageError($event, option)" />
+        <p>{{ option.name }}</p>
+      </div>
+    </div>
+  </div>
+  <app-meal-options-list (updateSelectedOptionsEvent)="refreshVars()"></app-meal-options-list>
+</main>

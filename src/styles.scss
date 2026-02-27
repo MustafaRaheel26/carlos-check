@@ -1,0 +1,23 @@
+@import "./assets/scss/reset";
+@import "./assets/scss/overflow";
+@import "./assets/fonts/fonts";
+@import "./assets/scss/animations";
+body {
+  font-family: Montserrat;
+  background-color: #1f1f1f;
+  color: white;
+}
+.notyf {
+  top: -20px !important;
+  &__toast {
+    max-width: 316px !important;
+  }
+  &__message {
+    text-align: center;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  &__wrapper {
+    padding-right: 10px;
+  }
+}

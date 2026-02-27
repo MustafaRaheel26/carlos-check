@@ -1,0 +1,77 @@
+<app-language-bar></app-language-bar>
+<main>
+  <img
+    class="qomander-logo"
+    src="./assets/images/logo/qomander.svg"
+    alt="qomander"
+    (click)="reset()"
+  />
+  <div class="meal">
+    <div class="meal__picture">
+      <img [src]="currentMealImageSrc" [alt]="selectedMeal.name" (error)="onMealImageError()" />
+    </div>
+    <div class="meal__name">
+      <p>{{ selectedMeal.name }}</p>
+      <p class="meal__price">${{ selectedMeal.price.toFixed(2) }}</p>
+    </div>
+    <div class="quantity-buttons">
+      <button (click)="changeSelectedMealQuantity('-')">-</button>
+      <span>{{ selectedMealQuantity }}</span>
+      <button (click)="changeSelectedMealQuantity('+')">+</button>
+    </div>
+  </div>
+
+  <div class="selected-options" *ngIf="removedIngredients.length">
+    <p class="selected-options__heading">
+      Removed Ingredients
+    </p>
+    <div class="selected-options__stack" #optionsContainer (wheel)="scrollEvent($event)">
+      <div class="option" *ngFor="let ingredient of removedIngredients">
+        <img [src]="ingredient.picture" [alt]="ingredient.name" (error)="onOptionImageError($event, ingredient)" />
+        <p>{{ ingredient.name }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="selected-options" *ngIf="selectedOptions.length">
+    <p class="selected-options__heading">
+      Added Extras
+      <span>{{ optionsTotalPrice === 0 ? "Free" : "+ $" + optionsTotalPrice.toFixed(2) }}</span>
+    </p>
+    <div class="selected-options__stack" #optionsContainer (wheel)="scrollEvent($event)">
+      <div class="option" *ngFor="let option of selectedOptions">
+        <img [src]="option.picture" [alt]="option.name" (error)="onOptionImageError($event, option)" />
+        <p>{{ option.name }}</p>
+        <p class="option__price" *ngIf="option.price > 0">+${{ option.price.toFixed(2) }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="special-instructions" *ngIf="specialInstructions">
+    <p class="special-instructions__heading">Special Instructions</p>
+    <p class="special-instructions__text">{{ specialInstructions }}</p>
+  </div>
+
+  <div class="total-price">
+    <p class="total-price__label">Total</p>
+    <p class="total-price__value">${{ totalPrice.toFixed(2) }}</p>
+  </div>
+
+  <div class="heading">
+    <img src="./assets/images/icons/order.png" alt="order" class="heading__picture" />
+    <h1>Order Review</h1>
+    <h2>
+      Review your order details above
+    </h2>
+  </div>
+  <div class="footer">
+    <h2 class="footer__heading">
+      Have you completed your order or <br />
+      you want to continue your selection?
+    </h2>
+    <div class="footer__buttons">
+      <button class="white" (click)="reset()">Finish</button>
+      <button class="orange" (click)="notif()">Select more</button>
+    </div>
+  </div>
+</main>
